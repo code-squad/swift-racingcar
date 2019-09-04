@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// 레이싱 게임 결과를 표현합니다.
 struct RacingResult {
     let distance: Int
     init() {

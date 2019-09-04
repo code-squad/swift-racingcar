@@ -9,16 +9,9 @@
 import XCTest
 
 class RacingCarTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_racingResult_hasAppropriateDistance() {
+        let result = RacingResult()
+        XCTAssertLessThan(result.distance, 4, "레이싱 결과는 3 이하 입니다.")
+        XCTAssertGreaterThan(result.distance, 0)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

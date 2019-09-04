@@ -12,6 +12,8 @@
 		CC864C5C231FB90B00E1C4DC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8332F75F2073755D00B11845 /* main.swift */; };
 		CC864C5E231FBF2800E1C4DC /* RacingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC864C5D231FBF2800E1C4DC /* RacingResult.swift */; };
 		CC864C60231FBF3B00E1C4DC /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC864C5F231FBF3B00E1C4DC /* RacingGame.swift */; };
+		CC864C61231FC02C00E1C4DC /* RacingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC864C5D231FBF2800E1C4DC /* RacingResult.swift */; };
+		CC864C62231FC02F00E1C4DC /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC864C5F231FBF3B00E1C4DC /* RacingGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -189,6 +191,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC864C61231FC02C00E1C4DC /* RacingResult.swift in Sources */,
+				CC864C62231FC02F00E1C4DC /* RacingGame.swift in Sources */,
 				CC864C5C231FB90B00E1C4DC /* main.swift in Sources */,
 				CC864C57231FB86400E1C4DC /* RacingCarTests.swift in Sources */,
 			);
