@@ -13,15 +13,12 @@ struct RacingGame {
         print("자동차 대수는 몇 대 인가요?")
         return Int(readLine() ?? "") ?? 0
     }
-    private static func playGame() -> RacingResult {
-        return RacingResult()
-    }
     
     static func playGames(for times: Int) {
         print("")
         print("실행 결과")
         for _ in 0..<3 {
-            let results = Array(0..<times).map { _ in RacingGame.playGame() }
+            let results = Array(0..<times).map { _ in RacingResult() }
             results.forEach {
                 $0.display()
             }
