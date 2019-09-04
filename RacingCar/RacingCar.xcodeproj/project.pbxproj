@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8332F7602073755D00B11845 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8332F75F2073755D00B11845 /* main.swift */; };
+		CC864C57231FB86400E1C4DC /* RacingCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC864C56231FB86400E1C4DC /* RacingCarTests.swift */; };
+		CC864C5C231FB90B00E1C4DC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8332F75F2073755D00B11845 /* main.swift */; };
+		CC864C5E231FBF2800E1C4DC /* RacingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC864C5D231FBF2800E1C4DC /* RacingResult.swift */; };
+		CC864C60231FBF3B00E1C4DC /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC864C5F231FBF3B00E1C4DC /* RacingGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +29,22 @@
 /* Begin PBXFileReference section */
 		8332F75C2073755D00B11845 /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		8332F75F2073755D00B11845 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		CC864C54231FB86400E1C4DC /* RacingCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC864C56231FB86400E1C4DC /* RacingCarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarTests.swift; sourceTree = "<group>"; };
+		CC864C58231FB86400E1C4DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC864C5D231FBF2800E1C4DC /* RacingResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingResult.swift; sourceTree = "<group>"; };
+		CC864C5F231FBF3B00E1C4DC /* RacingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8332F7592073755D00B11845 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC864C51231FB86400E1C4DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				8332F75E2073755D00B11845 /* RacingCar */,
+				CC864C55231FB86400E1C4DC /* RacingCarTests */,
 				8332F75D2073755D00B11845 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				8332F75C2073755D00B11845 /* RacingCar */,
+				CC864C54231FB86400E1C4DC /* RacingCarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +76,19 @@
 			isa = PBXGroup;
 			children = (
 				8332F75F2073755D00B11845 /* main.swift */,
+				CC864C5D231FBF2800E1C4DC /* RacingResult.swift */,
+				CC864C5F231FBF3B00E1C4DC /* RacingGame.swift */,
 			);
 			path = RacingCar;
+			sourceTree = "<group>";
+		};
+		CC864C55231FB86400E1C4DC /* RacingCarTests */ = {
+			isa = PBXGroup;
+			children = (
+				CC864C56231FB86400E1C4DC /* RacingCarTests.swift */,
+				CC864C58231FB86400E1C4DC /* Info.plist */,
+			);
+			path = RacingCarTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,18 +111,38 @@
 			productReference = 8332F75C2073755D00B11845 /* RacingCar */;
 			productType = "com.apple.product-type.tool";
 		};
+		CC864C53231FB86400E1C4DC /* RacingCarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC864C5B231FB86400E1C4DC /* Build configuration list for PBXNativeTarget "RacingCarTests" */;
+			buildPhases = (
+				CC864C50231FB86400E1C4DC /* Sources */,
+				CC864C51231FB86400E1C4DC /* Frameworks */,
+				CC864C52231FB86400E1C4DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RacingCarTests;
+			productName = RacingCarTests;
+			productReference = CC864C54231FB86400E1C4DC /* RacingCarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		8332F7542073755D00B11845 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = JK;
 				TargetAttributes = {
 					8332F75B2073755D00B11845 = {
 						CreatedOnToolsVersion = 9.3;
+					};
+					CC864C53231FB86400E1C4DC = {
+						CreatedOnToolsVersion = 10.3;
 					};
 				};
 			};
@@ -110,16 +159,38 @@
 			projectRoot = "";
 			targets = (
 				8332F75B2073755D00B11845 /* RacingCar */,
+				CC864C53231FB86400E1C4DC /* RacingCarTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC864C52231FB86400E1C4DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8332F7582073755D00B11845 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC864C60231FBF3B00E1C4DC /* RacingGame.swift in Sources */,
+				CC864C5E231FBF2800E1C4DC /* RacingResult.swift in Sources */,
 				8332F7602073755D00B11845 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC864C50231FB86400E1C4DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC864C5C231FB90B00E1C4DC /* main.swift in Sources */,
+				CC864C57231FB86400E1C4DC /* RacingCarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +328,49 @@
 			};
 			name = Release;
 		};
+		CC864C59231FB86400E1C4DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Y59HNQR68T;
+				INFOPLIST_FILE = RacingCarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinemaster.RacingCarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CC864C5A231FB86400E1C4DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = Y59HNQR68T;
+				INFOPLIST_FILE = RacingCarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kinemaster.RacingCarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -274,6 +388,15 @@
 			buildConfigurations = (
 				8332F7642073755D00B11845 /* Debug */,
 				8332F7652073755D00B11845 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC864C5B231FB86400E1C4DC /* Build configuration list for PBXNativeTarget "RacingCarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC864C59231FB86400E1C4DC /* Debug */,
+				CC864C5A231FB86400E1C4DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

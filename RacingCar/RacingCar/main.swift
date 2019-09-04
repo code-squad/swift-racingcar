@@ -8,3 +8,5 @@
 
 import Foundation
 
+let numberOfGames = RacingGame.getNumberOfCars()
+RacingGame.playGames(for: numberOfGames)
