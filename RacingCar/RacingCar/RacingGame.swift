@@ -14,11 +14,11 @@ struct RacingGame {
         return Int(readLine() ?? "") ?? 0
     }
     
-    static func playGames(for times: Int) {
+    static func playGames(for cars: Int) {
         print("")
         print("실행 결과")
         for _ in 0..<3 {
-            let results = Array(0..<times).map { _ in RacingResult() }
+            let results = Array(0..<cars).map { _ in RacingResult() }
             results.forEach {
                 $0.display()
             }
