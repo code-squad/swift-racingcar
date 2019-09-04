@@ -8,3 +8,15 @@
 
 import Foundation
 
+print("자동차 대수는 몇 대 인가요?")
+
+let numberOfCars: Int = Int(readLine() ?? "0") ?? 0
+
+var game = RacingGame(numberOfCars: numberOfCars)
+
+print("실행 결과")
+
+for _ in 1...3 {
+    game.race()
+    game.printRace()
+}

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8332F7602073755D00B11845 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8332F75F2073755D00B11845 /* main.swift */; };
+		88E88896231FBAAC0042829B /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E88895231FBAAC0042829B /* RacingGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		8332F75C2073755D00B11845 /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		8332F75F2073755D00B11845 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		88E88895231FBAAC0042829B /* RacingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				8332F75F2073755D00B11845 /* main.swift */,
+				88E88895231FBAAC0042829B /* RacingGame.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8332F7602073755D00B11845 /* main.swift in Sources */,
+				88E88896231FBAAC0042829B /* RacingGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
