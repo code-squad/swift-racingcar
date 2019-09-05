@@ -29,14 +29,12 @@ struct Car {
 }
 
 struct RacingGame {
-    var cars: [Car]
+    var cars = [Car]()
     
     init(numberOfCars: Int) {
-        var cars: [Car] = []
         for _ in 1...numberOfCars {
-            cars.append(Car())
+            self.cars.append(Car())
         }
-        self.cars = cars
     }
     
     mutating func playOneTurn() {
@@ -56,14 +54,21 @@ struct RacingGame {
         print("")
     }
     
+    mutating func playGame(times: Int) {
+        for _ in 1...times {
+            self.playOneTurn()
+            self.displayOneTurn()
+        }
+    }
+    
 }
 
-print("자동차 대수는 몇 대 인가요?")
-var number = Int(readLine() ?? "3") ?? 3
-
-var game = RacingGame(numberOfCars: number)
-for _ in 1...3 {
-    game.playOneTurn()
-    game.displayOneTurn()
+func receiveNumberOfCars() -> Int {
+    print("자동차 대수는 몇 대 인가요?")
+    let number = Int(readLine() ?? "3") ?? 3
+    return number
 }
 
+var numberOfCarToPlay = receiveNumberOfCars()
+var game = RacingGame(numberOfCars: numberOfCarToPlay)
+game.playGame(times: 3)
