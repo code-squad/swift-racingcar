@@ -8,58 +8,26 @@
 
 import Foundation
 
-struct RacingGames {
+
+func main() {
+    //let carCount = InputView.readNumberOfCars()
+    //var game = CarRacing(numberOfCars: carCount)
     
-    var numberOfCars : Int
-    var doesCarMovingFowrd : Array<Int> = []
-    
-    init(numberOfCars : Int) {
-        self.numberOfCars = numberOfCars
-        
+    guard let carNames = InputView.readCarNames() else {
+        print("Failed to get car names")
+        return
     }
     
-    mutating func resetCarMoving() {
-        self.doesCarMovingFowrd = [Int](repeating: 0, count: numberOfCars)
+    let racingCount = InputView.readRacingCount()
+    if racingCount <= 0 {
+        print("Racing count should be greater than 0.")
+        return
     }
     
-    mutating func runRacing() {
-        
-        for carIndex in 0..<numberOfCars {
-            var isForwarding = Int.random(in: 0...9)
-            
-            doesCarMovingFowrd[carIndex] += (isForwarding >= 4 ? 1 : 0)
-        }
-    }
+    var racing = CarRacing(carNames: carNames)
+    racing.runRacing(times: racingCount)
     
-    func printRacingResult() {
-        for carIndex in 0..<numberOfCars {
-            for _ in 0..<doesCarMovingFowrd[carIndex] {
-                print("-", terminator:"")
-            }
-            print("")
-        }
-    }
-    
-    mutating func runRacingPrintRepeat(count : Int) {
-        resetCarMoving()
-        for _ in 1...count {
-            runRacing()
-            printRacingResult()
-            
-            print("")
-        }
-    }
-    
+    OutputView.printGameResult(carRacing : racing)
 }
 
-print("> 자동차 대수는 몇 대 인가요?")
-print("> ", terminator:"")
-var readCarCounts = readLine()
-
-var numberOfCars = Int(readCarCounts ?? "0") ?? 0
-
-var racingGame = RacingGames(numberOfCars: numberOfCars)
-
-print("")
-print("실행결과")
-racingGame.runRacingPrintRepeat(count: 3)
+main()
