@@ -27,7 +27,7 @@ func main() {
     var racing = CarRacing(carNames: carNames)
     racing.runRacing(times: racingCount)
     
-    OutputView.printGameResult(carRacing : racing)
+    OutputView.printRacingResult(carRacing : racing)
 }
 
 main()

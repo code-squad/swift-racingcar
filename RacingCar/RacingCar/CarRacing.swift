@@ -84,8 +84,8 @@ struct CarRacing {
         }
     }
     
-    func printResult() {
-        print(racingResultsString)
+    func getRacingResult() -> String {
+        return racingResultsString
     }
     
 }

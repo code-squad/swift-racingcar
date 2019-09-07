@@ -11,7 +11,7 @@ import Foundation
 
 
 struct OutputView {
-    static func printGameResult(carRacing : CarRacing) -> Void {
-        carRacing.printResult()
+    static func printRacingResult(carRacing : CarRacing) -> Void {
+        print(carRacing.getRacingResult())
     }
 }
