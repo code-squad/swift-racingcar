@@ -12,19 +12,15 @@ struct Car {
     public var name : String
     public var distance : Int = 0
     
-    init(_ name : String) {
+    init(name : String = "None") {
         self.name = name.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     mutating func tryToMoveForward() -> Bool {
-        let moveForwardResult = doesCarMoveForward(Int.random(in: 0...9))
+        let moveForwardResult = RandomMove.canMoveForward(with: Int.random(in: 0...9))
         distance += moveForwardResult ? 1 : 0
         
         return moveForwardResult
-    }
-    
-    private func doesCarMoveForward(_ randomeMoveNumber : Int) -> Bool {
-        return (randomeMoveNumber >= 4) ? true : false
     }
     
     func getDistanceString() -> String {

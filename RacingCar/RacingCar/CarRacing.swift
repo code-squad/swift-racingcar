@@ -9,21 +9,17 @@
 import Foundation
 
 struct CarRacing {
-    var numberOfCars : Int
     var racingCars : Array<Car>!
     var racingResultsString : String
     
     init(numberOfCars : Int) {
-        self.numberOfCars = numberOfCars
-        self.racingCars = [Car](repeating: Car("None"), count: self.numberOfCars)
-        racingResultsString = ""
+        self.init(carNames: [String](repeating: "None", count: numberOfCars))
     }
     
     init(carNames : [String]) {
-        self.numberOfCars = carNames.count
         self.racingCars = []
         for carName in carNames {
-            self.racingCars.append(Car(carName))
+            self.racingCars.append(Car(name: carName))
         }
         racingResultsString = ""
     }
@@ -41,7 +37,7 @@ struct CarRacing {
     }
     
     private mutating func moveRacingCars() {
-        for carIndex in 0..<numberOfCars {
+        for carIndex in 0..<racingCars.count {
             racingCars[carIndex].tryToMoveForward()
         }
     }

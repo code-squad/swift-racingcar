@@ -14,4 +14,8 @@ struct OutputView {
     static func printRacingResult(carRacing : CarRacing) -> Void {
         print(carRacing.getRacingResult())
     }
+    
+    static func printError(errorMessage : String) -> Void {
+        print(errorMessage)
+    }
 }

@@ -8,26 +8,42 @@
 
 import Foundation
 
+enum CarRacingError : Error {
+    case InvalidCarNames
+    case InvalidNumberOfCars
+    case InvalidRacingCount
+    case InvalidRange
+}
 
 func main() {
     //let carCount = InputView.readNumberOfCars()
     //var game = CarRacing(numberOfCars: carCount)
     
-    guard let carNames = InputView.readCarNames() else {
-        print("Failed to get car names")
-        return
+    do {
+        let carNames = try InputView.readCarNames()
+        let racingCount = try InputView.readRacingCount()
+        
+        var racing = CarRacing(carNames: carNames)
+        racing.runRacing(times: racingCount)
+        
+        OutputView.printRacingResult(carRacing : racing)
     }
-    
-    let racingCount = InputView.readRacingCount()
-    if racingCount <= 0 {
-        print("Racing count should be greater than 0.")
-        return
+    catch CarRacingError.InvalidCarNames {
+        OutputView.printError(errorMessage: "Failed to get car names.")
     }
-    
-    var racing = CarRacing(carNames: carNames)
-    racing.runRacing(times: racingCount)
-    
-    OutputView.printRacingResult(carRacing : racing)
+    catch CarRacingError.InvalidNumberOfCars {
+        OutputView.printError(errorMessage: "Failed to get number of cars.")
+    }
+    catch CarRacingError.InvalidRacingCount {
+        OutputView.printError(errorMessage: "Racing count should be greater than 0.")
+    }
+    catch CarRacingError.InvalidRange {
+        OutputView.printError(errorMessage: "Invalid ragne.")
+    }
+    catch {
+        OutputView.printError(errorMessage: "Unknown error.")
+    }    
+   
 }
 
 main()

@@ -11,6 +11,7 @@
 		5DD70C702322420A00798630 /* CarRacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD70C6F2322420A00798630 /* CarRacing.swift */; };
 		5DD70C722322437D00798630 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD70C712322437D00798630 /* InputView.swift */; };
 		5DD70C742322439700798630 /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD70C732322439700798630 /* OutputView.swift */; };
+		5DD70C762325F2CA00798630 /* RandomMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD70C752325F2CA00798630 /* RandomMove.swift */; };
 		8332F7602073755D00B11845 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8332F75F2073755D00B11845 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		5DD70C6F2322420A00798630 /* CarRacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRacing.swift; sourceTree = "<group>"; };
 		5DD70C712322437D00798630 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		5DD70C732322439700798630 /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
+		5DD70C752325F2CA00798630 /* RandomMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMove.swift; sourceTree = "<group>"; };
 		8332F75C2073755D00B11845 /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		8332F75F2073755D00B11845 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +72,7 @@
 				5DD70C6F2322420A00798630 /* CarRacing.swift */,
 				5DD70C712322437D00798630 /* InputView.swift */,
 				5DD70C732322439700798630 /* OutputView.swift */,
+				5DD70C752325F2CA00798630 /* RandomMove.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 				5DD70C742322439700798630 /* OutputView.swift in Sources */,
 				5DD70C702322420A00798630 /* CarRacing.swift in Sources */,
 				5DD70C722322437D00798630 /* InputView.swift in Sources */,
+				5DD70C762325F2CA00798630 /* RandomMove.swift in Sources */,
 				5DD70C6E2322416100798630 /* Car.swift in Sources */,
 				8332F7602073755D00B11845 /* main.swift in Sources */,
 			);
