@@ -11,5 +11,8 @@ import Foundation
 let inputView = InputView()
 let racingCars = inputView.racingCars()
 
-let game = RacingCarGame(numberOfPlay: 3, racingCars: racingCars)
+var game = RacingCarGame(numberOfPlay: 3, racingCars: racingCars)
 game.play()
+
+let outputView = OutputView(game: game)
+outputView.showWinner()

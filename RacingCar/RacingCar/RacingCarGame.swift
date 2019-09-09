@@ -9,28 +9,32 @@
 import Foundation
 
 struct RacingCarGame {
-    private let numberOfPlay: Int
-    private let racingCars: [RacingCar]
     
-    init(numberOfPlay:Int, racingCars: [RacingCar]) {
-        self.numberOfPlay = numberOfPlay
+    private let totalRound: UInt
+    private var racingCars: [RacingCar]
+    var racingResults: [RacingResult]
+    
+    init(numberOfPlay: UInt, racingCars: [RacingCar]) {
+        self.totalRound = numberOfPlay
         self.racingCars = racingCars
+        self.racingResults = []
     }
     
-    func play() {
-        var racingCars = self.racingCars
-        for _ in 0..<numberOfPlay {
-            for index in 0..<racingCars.count {
-                if self.shouldGo {
-                    racingCars[index].go()
-                }
-                racingCars[index].showTravels()
-            }
-            print("")
+    mutating func play() {
+        for round in 0..<totalRound {
+            startRace(of: round)
+            recordResult(of: round)
         }
     }
     
-    var shouldGo: Bool {
-        return arc4random_uniform(10) > 4 ? true : false
+    private mutating func startRace(of round: UInt) {
+        for index in 0..<racingCars.count {
+            racingCars[index].race()
+        }
+    }
+    
+    private mutating func recordResult(of round: UInt) {
+        let result = RacingResult(round: round, racingCars: racingCars)
+        racingResults.append(result)
     }
 }

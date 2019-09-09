@@ -9,16 +9,13 @@
 import Foundation
 
 struct RacingCar {
-    var mileage: Int = 0
+    var distance: UInt = 0
     
-    mutating func go() {
-        mileage = mileage + 1
+    private func distance(for number: UInt32) -> UInt {
+        return (number > 4) ? 1 : 0
     }
     
-    func showTravels() {
-        for _ in 0..<mileage {
-            print("-", terminator:"")
-        }
-        print("")
+    mutating func race() {
+        distance = distance + distance(for: arc4random_uniform(10))
     }
 }
