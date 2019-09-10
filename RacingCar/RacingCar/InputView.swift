@@ -16,10 +16,10 @@ import Foundation
 
 struct InputView {
     
-    static func readNumberOfCar() -> Int {
+    static func readNumberOfCar(_ defaultNumber: Int = 3) -> Int {
         print("=== Input ===")
         print("자동차 대수는 몇 대 인가요?")
-        let number = Int(readLine() ?? "3") ?? 3
+        let number = Int(readLine() ?? String(defaultNumber)) ?? defaultNumber
         print("")
         return number
     }

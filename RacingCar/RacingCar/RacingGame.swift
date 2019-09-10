@@ -24,11 +24,11 @@ struct RacingGame {
         }
     }
     
-    mutating func playOneTurn() {
+    mutating func playOneRound() {
         for i in 0..<self.cars.count{
             let random = Int.random(in: 0...9)
             let isMove = self.needToMove(random: random)
-            self.cars[i].moveForward(need: isMove)
+            self.cars[i].playOneRound(canMove: isMove)
         }
     }
     
@@ -39,7 +39,7 @@ struct RacingGame {
     
     mutating func playGame(times: Int) {
         for _ in 1...times {
-            self.playOneTurn()
+            self.playOneRound()
         }
     }
     

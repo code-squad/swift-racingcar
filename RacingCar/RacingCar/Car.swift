@@ -17,23 +17,34 @@ import Foundation
 
 struct Car {
     var step: Int
+    var stepHistory: [Int] = []
     
     init(step: Int = 1) {
         self.step = step
+        self.stepHistory = []
     }
     
-    mutating func moveForward(need: Bool) {
-        if need {
+    mutating func playOneRound(canMove: Bool) {
+        if canMove {
             self.step += 1
         }
+        self.stepHistory.append(self.step)
     }
     
-    func stepToPrint() -> String {
-        var stepStr: String = ""
-        for _ in 0..<self.step {
-            stepStr += "-"
+    func printStep(_ step: Int) -> String {
+        var str: String = ""
+        for _ in 0 ..< step {
+            str += "-"
         }
-        return stepStr
+        return str
     }
+    
+    func printStepHistory(at: Int) -> String {
+        if self.stepHistory.count > at {
+            return self.printStep(self.stepHistory[at])
+        }
+        return ""
+    }
+    
 }
 

@@ -19,8 +19,24 @@ struct OutputView {
     static func printGame(_ game: RacingGame) {
         print("=== output ===")
         
-        for car in game.cars {
-            print(car.stepToPrint())
+        let roundCount = OutputView.detectRoundCount(car: game.cars.first)
+        
+        for i in 0 ..< roundCount {
+            OutputView.printOneRound(at: i, cars: game.cars)
+            print("")
+        }
+    }
+    
+    static func detectRoundCount(car: Car?) -> Int {
+        guard let car = car else {
+            return 0
+        }
+        return car.stepHistory.count
+    }
+    
+    static func printOneRound(at index: Int, cars: [Car]) {
+        for car in cars {
+            print(car.printStepHistory(at: index))
         }
     }
 }
