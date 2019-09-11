@@ -12,6 +12,7 @@
 		5DD70C722322437D00798630 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD70C712322437D00798630 /* InputView.swift */; };
 		5DD70C742322439700798630 /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD70C732322439700798630 /* OutputView.swift */; };
 		5DD70C762325F2CA00798630 /* RandomMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD70C752325F2CA00798630 /* RandomMove.swift */; };
+		5DD70C7E2328E38B00798630 /* RacingCarUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD70C7D2328E38B00798630 /* RacingCarUnitTest.swift */; };
 		8332F7602073755D00B11845 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8332F75F2073755D00B11845 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,11 +34,21 @@
 		5DD70C712322437D00798630 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		5DD70C732322439700798630 /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
 		5DD70C752325F2CA00798630 /* RandomMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMove.swift; sourceTree = "<group>"; };
+		5DD70C7B2328E38B00798630 /* RacingCarUnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarUnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DD70C7D2328E38B00798630 /* RacingCarUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarUnitTest.swift; sourceTree = "<group>"; };
+		5DD70C7F2328E38B00798630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8332F75C2073755D00B11845 /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		8332F75F2073755D00B11845 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5DD70C782328E38B00798630 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8332F7592073755D00B11845 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -48,10 +59,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DD70C7C2328E38B00798630 /* RacingCarUnitTest */ = {
+			isa = PBXGroup;
+			children = (
+				5DD70C7D2328E38B00798630 /* RacingCarUnitTest.swift */,
+				5DD70C7F2328E38B00798630 /* Info.plist */,
+			);
+			path = RacingCarUnitTest;
+			sourceTree = "<group>";
+		};
 		8332F7532073755D00B11845 = {
 			isa = PBXGroup;
 			children = (
 				8332F75E2073755D00B11845 /* RacingCar */,
+				5DD70C7C2328E38B00798630 /* RacingCarUnitTest */,
 				8332F75D2073755D00B11845 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				8332F75C2073755D00B11845 /* RacingCar */,
+				5DD70C7B2328E38B00798630 /* RacingCarUnitTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,6 +102,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5DD70C7A2328E38B00798630 /* RacingCarUnitTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DD70C822328E38B00798630 /* Build configuration list for PBXNativeTarget "RacingCarUnitTest" */;
+			buildPhases = (
+				5DD70C772328E38B00798630 /* Sources */,
+				5DD70C782328E38B00798630 /* Frameworks */,
+				5DD70C792328E38B00798630 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RacingCarUnitTest;
+			productName = RacingCarUnitTest;
+			productReference = 5DD70C7B2328E38B00798630 /* RacingCarUnitTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8332F75B2073755D00B11845 /* RacingCar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8332F7632073755D00B11845 /* Build configuration list for PBXNativeTarget "RacingCar" */;
@@ -103,10 +142,13 @@
 		8332F7542073755D00B11845 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = JK;
 				TargetAttributes = {
+					5DD70C7A2328E38B00798630 = {
+						CreatedOnToolsVersion = 10.3;
+					};
 					8332F75B2073755D00B11845 = {
 						CreatedOnToolsVersion = 9.3;
 					};
@@ -125,11 +167,30 @@
 			projectRoot = "";
 			targets = (
 				8332F75B2073755D00B11845 /* RacingCar */,
+				5DD70C7A2328E38B00798630 /* RacingCarUnitTest */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		5DD70C792328E38B00798630 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		5DD70C772328E38B00798630 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DD70C7E2328E38B00798630 /* RacingCarUnitTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8332F7582073755D00B11845 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,6 +207,45 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		5DD70C802328E38B00798630 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RacingCarUnitTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.temphee.RacingCarUnitTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5DD70C812328E38B00798630 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RacingCarUnitTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.temphee.RacingCarUnitTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		8332F7612073755D00B11845 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -280,6 +380,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5DD70C822328E38B00798630 /* Build configuration list for PBXNativeTarget "RacingCarUnitTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DD70C802328E38B00798630 /* Debug */,
+				5DD70C812328E38B00798630 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8332F7572073755D00B11845 /* Build configuration list for PBXProject "RacingCar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

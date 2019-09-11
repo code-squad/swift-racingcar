@@ -9,10 +9,8 @@
 import Foundation
 
 enum CarRacingError : Error {
-    case InvalidCarNames
-    case InvalidNumberOfCars
-    case InvalidRacingCount
-    case InvalidRange
+    case InvalidInput(message: String)
+    case InvalidRange(message: String, inputValue : Int)
 }
 
 func main() {
@@ -28,21 +26,15 @@ func main() {
         
         OutputView.printRacingResult(carRacing : racing)
     }
-    catch CarRacingError.InvalidCarNames {
-        OutputView.printError(errorMessage: "Failed to get car names.")
+    catch CarRacingError.InvalidInput(let message) {
+        OutputView.printError(errorMessage: message)
     }
-    catch CarRacingError.InvalidNumberOfCars {
-        OutputView.printError(errorMessage: "Failed to get number of cars.")
-    }
-    catch CarRacingError.InvalidRacingCount {
-        OutputView.printError(errorMessage: "Racing count should be greater than 0.")
-    }
-    catch CarRacingError.InvalidRange {
-        OutputView.printError(errorMessage: "Invalid ragne.")
+    catch CarRacingError.InvalidRange(let message, let inputValue) {
+        OutputView.printError(errorMessage: "\(message) -> (\(inputValue))")
     }
     catch {
         OutputView.printError(errorMessage: "Unknown error.")
-    }    
+    }
    
 }
 
