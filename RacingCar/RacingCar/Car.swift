@@ -19,8 +19,8 @@ struct Car {
     var step: Int
     var stepHistory: [Int] = []
     
-    init(step: Int = 1) {
-        self.step = step
+    init(initStep: Int = 1) {
+        self.step = initStep
         self.stepHistory = []
     }
     

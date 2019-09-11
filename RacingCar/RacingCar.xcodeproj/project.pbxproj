@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2C2585A72327C1C20016FEC5 /* RacingCarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2585A62327C1C20016FEC5 /* RacingCarTest.swift */; };
+		2C2585AC232894DF0016FEC5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8332F75F2073755D00B11845 /* main.swift */; };
+		2C2585AD232894DF0016FEC5 /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77C9212323E10F006395E2 /* RacingGame.swift */; };
+		2C2585AE232894DF0016FEC5 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77C91D2323E0D3006395E2 /* InputView.swift */; };
+		2C2585AF232894DF0016FEC5 /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77C91F2323E0E6006395E2 /* OutputView.swift */; };
+		2C2585B0232894DF0016FEC5 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77C9232323EC4D006395E2 /* Car.swift */; };
 		2C77C91E2323E0D3006395E2 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77C91D2323E0D3006395E2 /* InputView.swift */; };
 		2C77C9202323E0E6006395E2 /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77C91F2323E0E6006395E2 /* OutputView.swift */; };
 		2C77C9222323E10F006395E2 /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C77C9212323E10F006395E2 /* RacingGame.swift */; };
@@ -184,6 +189,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2585AC232894DF0016FEC5 /* main.swift in Sources */,
+				2C2585AD232894DF0016FEC5 /* RacingGame.swift in Sources */,
+				2C2585AE232894DF0016FEC5 /* InputView.swift in Sources */,
+				2C2585AF232894DF0016FEC5 /* OutputView.swift in Sources */,
+				2C2585B0232894DF0016FEC5 /* Car.swift in Sources */,
 				2C2585A72327C1C20016FEC5 /* RacingCarTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
