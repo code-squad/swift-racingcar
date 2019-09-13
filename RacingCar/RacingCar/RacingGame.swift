@@ -15,7 +15,7 @@
 import Foundation
 
 
-struct RacingGame {
+class RacingGame {
     var cars = [Car]()
     
     init(numberOfCar: Int) {
@@ -24,7 +24,7 @@ struct RacingGame {
         }
     }
     
-    mutating func playOneRound() {
+    func playOneRound() {
         for i in 0..<self.cars.count{
             let random = Int.random(in: 0...9)
             let isMove = self.needToMove(random: random)
@@ -37,13 +37,13 @@ struct RacingGame {
         return random >= RacingGame.MoveOrNot
     }
     
-    mutating func playGame(times: Int) {
+    func playGame(times: Int) {
         for _ in 1...times {
             self.playOneRound()
         }
     }
     
-    mutating func run() {
+    func run() {
         self.playGame(times: 3)
     }
 }

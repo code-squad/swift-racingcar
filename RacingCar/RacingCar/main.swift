@@ -10,7 +10,7 @@ import Foundation
 
 func main() {
     let carCount = InputView.readNumberOfCar()
-    var game = RacingGame(numberOfCar: carCount)
+    let game = RacingGame(numberOfCar: carCount)
     game.run()
     OutputView.printGame(game)
 }
