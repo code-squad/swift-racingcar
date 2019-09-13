@@ -24,6 +24,12 @@ class RacingGame {
         }
     }
     
+    init(carNames: [String]) {
+        for carName in carNames {
+            self.cars.append(Car(name: carName))
+        }
+    }
+    
     func playOneRound() {
         for i in 0..<self.cars.count{
             let random = Int.random(in: 0...9)
@@ -43,7 +49,23 @@ class RacingGame {
         }
     }
     
-    func run() {
-        self.playGame(times: 3)
+    func run(roundsToPlay: Int = 3) {
+        self.playGame(times: roundsToPlay)
+    }
+    
+    func winners() -> [Car] {
+        var maxStep = 0
+        for car in self.cars {
+            if maxStep < car.step {
+                maxStep = car.step
+            }
+        }
+        var winners: [Car] = []
+        for car in self.cars {
+            if car.step == maxStep {
+                winners.append(car)
+            }
+        }
+        return winners
     }
 }

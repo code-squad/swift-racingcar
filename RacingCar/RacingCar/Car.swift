@@ -18,8 +18,16 @@ import Foundation
 struct Car {
     var step: Int
     var stepHistory: [Int] = []
+    let name: String
     
     init(initStep: Int = 1) {
+        self.step = initStep
+        self.stepHistory = []
+        self.name = "unnamed"
+    }
+    
+    init(name: String = "unnamed", initStep: Int = 1) {
+        self.name = name
         self.step = initStep
         self.stepHistory = []
     }
@@ -32,7 +40,7 @@ struct Car {
     }
     
     func printStep(_ step: Int) -> String {
-        var str: String = ""
+        var str: String = String("\(self.name) : ")
         for _ in 0 ..< step {
             str += "-"
         }

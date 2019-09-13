@@ -9,10 +9,14 @@
 import Foundation
 
 func main() {
-    let carCount = InputView.readNumberOfCar()
-    let game = RacingGame(numberOfCar: carCount)
-    game.run()
+    let carNames = InputView.readCarNames()
+    let game = RacingGame(carNames: carNames)
+    
+    let numberOfRounds = InputView.readNumberOfRoundToPlay()
+    game.run(roundsToPlay: numberOfRounds)
     OutputView.printGame(game)
+    OutputView.printWinner(game: game)
 }
 
 main()
+

@@ -17,8 +17,8 @@ import Foundation
 struct OutputView {
     
     static func printGame(_ game: RacingGame) {
-        print("=== output ===")
-        
+        //print("=== output ===")
+        print("실행결과")
         let roundCount = OutputView.detectRoundCount(car: game.cars.first)
         
         for i in 0 ..< roundCount {
@@ -38,5 +38,22 @@ struct OutputView {
         for car in cars {
             print(car.printStepHistory(at: index))
         }
+    }
+    
+    static func printWinner(game: RacingGame) {
+        let winners = game.winners()
+        if winners.count < 1 {
+            print("우승자를 찾을 수 없습니다.")
+            return
+        }
+        var result = ""
+        for car in winners {
+            result += car.name
+            result += ", "
+        }
+        let removeSuffix = result.index(result.endIndex, offsetBy: -2)..<result.endIndex
+        result.removeSubrange(removeSuffix)
+        result += "가 최종 우승했습니다."
+        print(result)
     }
 }
