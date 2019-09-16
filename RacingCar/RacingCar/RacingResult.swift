@@ -10,7 +10,11 @@ import Foundation
 
 struct RacingResult {
     
-    var roundResults: [RoundResult] = Array()
+    private(set) var roundResults: [RoundResult]
+    
+    init(roundResults: [RoundResult] = Array()) {
+        self.roundResults = roundResults
+    }
     
     mutating func write(result: RoundResult) {
         roundResults.append(result)

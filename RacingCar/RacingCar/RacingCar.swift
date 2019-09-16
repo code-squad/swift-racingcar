@@ -9,15 +9,15 @@
 import Foundation
 
 struct RacingCar {
-    var distance: UInt
-    var name: String
+    private(set) var distance: UInt
+    private(set) var name: String
     
-    init(name: String) {
+    init(name: String, distance: UInt = 0) {
         self.name = name
-        self.distance = 0
+        self.distance = distance
     }
     
-    private func distance(for number: UInt32) -> UInt {
+    func distance(for number: UInt32) -> UInt {
         return (number > 4) ? 1 : 0
     }
     

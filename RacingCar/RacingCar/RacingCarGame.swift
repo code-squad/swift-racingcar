@@ -10,7 +10,7 @@ import Foundation
 
 struct RacingCarGame {
     
-    private var racingCars: [RacingCar]
+    private(set) var racingCars: [RacingCar]
     
     init( racingCars: [RacingCar] ) {
         self.racingCars = racingCars
