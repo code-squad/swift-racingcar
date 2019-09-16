@@ -33,7 +33,7 @@ func main() {
         OutputView.printError(errorMessage: "\(message) -> (\(inputValue))")
     }
     catch {
-        OutputView.printError(errorMessage: "Unknown error.")
+        OutputView.printError(errorMessage: "Unexpected error. : \(error)")
     }
    
 }

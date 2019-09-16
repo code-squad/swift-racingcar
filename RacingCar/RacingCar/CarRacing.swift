@@ -9,8 +9,8 @@
 import Foundation
 
 struct CarRacing {
-    var racingCars : Array<Car>!
-    var racingResultsString : String
+    private(set) var racingCars : Array<Car>!
+    private(set) var racingResultsString : String
     
     init(numberOfCars : Int) {
         self.init(carNames: [String](repeating: "None", count: numberOfCars))
@@ -52,16 +52,21 @@ struct CarRacing {
     }
     
     private func getWinnerResult(racedCars: [Car]) -> String {
-        let winners = selectFinalWinner(racedCars)
+        guard let winners = selectFinalWinner(racedCars) else {
+            return "there are no winners"
+        }
+        
         let winnerString = winners.joined(separator:", ")
         let resultString = winnerString + "가 최종 우승했습니다."
         
         return resultString
     }
     
-    private func selectFinalWinner(_ racedCars : [Car]) -> [String] {
-        let maxDistance = racedCars.map { $0.distance }.max()
-        let winnerCars = racedCars.filter {$0.distance == maxDistance}
+    private func selectFinalWinner(_ racedCars : [Car]) -> [String]? {
+        guard let maxDistance = getMaxDistance(racedCars: racedCars) else {
+            return nil
+        }
+        let winnerCars = getWinnerCars(racedCars: racedCars, maxDistance: maxDistance)
         
         var finalWinner : [String] = []
         
@@ -82,6 +87,14 @@ struct CarRacing {
     
     func getRacingResult() -> String {
         return racingResultsString
+    }
+    
+    func getMaxDistance(racedCars: [Car]) -> Int? {
+        return racedCars.map { $0.distance }.max()
+    }
+    
+    func getWinnerCars(racedCars:[Car], maxDistance:Int) -> [Car] {
+        return racedCars.filter {$0.distance == maxDistance}
     }
     
 }

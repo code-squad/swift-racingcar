@@ -9,8 +9,8 @@
 import Foundation
 
 struct Car {
-    public var name : String
-    public var distance : Int = 0
+    public private(set) var name : String
+    public private(set) var distance : Int = 0
     
     init(name : String = "None") {
         self.name = name.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -18,10 +18,17 @@ struct Car {
     
     mutating func tryToMoveForward() -> Bool {
         let moveForwardResult = RandomMove.canMoveForward(with: Int.random(in: 0...9))
-        distance += moveForwardResult ? 1 : 0
+        if moveForwardResult {
+            self.moveForward()
+        }
         
         return moveForwardResult
     }
+    
+    mutating func moveForward(with addValue: Int = 1) {
+        distance += addValue
+    }
+    
     
     func getDistanceString() -> String {
         var distanceString = "\(self.name)\t: "
