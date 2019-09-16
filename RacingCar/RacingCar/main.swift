@@ -9,12 +9,12 @@
 import Foundation
 
 func main() {
-    let carCount = InputView.readNumberOfCar()
-    var game = RacingGame(numberOfCars: carCount)
-    for _ in 1...3 {
-        game.race()
-    }
-    OutputView.printGame(game: game)
+    let cars = InputView.readCars()
+    let numberOfRounds = InputView.readNumberOfRounds()
+    var game = RacingGame(cars: cars, numberOfRounds: numberOfRounds)
+    game.startRace()
+    var outputView = OutputView(game: game, accumulatedRecords: [])
+    outputView.printResult()
 }
 
 main()

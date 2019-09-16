@@ -9,30 +9,20 @@
 import Foundation
 
 struct RacingGame {
-    let numberOfCars: Int
-    var races = [[Int]]()
+    let cars: [Car]
+    let numberOfRounds: Int
+    var rounds = [Round]()
     
-    init(numberOfCars: Int) {
-        self.numberOfCars = numberOfCars
+    init(cars: [Car], numberOfRounds: Int) {
+        self.cars = cars
+        self.numberOfRounds = numberOfRounds
     }
     
-    mutating func race() {
-        var racePerRound = [Int]()
-        for carIndex in 0..<numberOfCars {
-            let randomDistance: Int = Int.random(in: 0...9) >= 4 ? 1 : 0
-            racePerRound.append(accumulatedDistancePerCar(carIndex: carIndex, distance: randomDistance))
+    mutating func startRace() {
+        for _ in 1...numberOfRounds {
+            var round = Round(cars: cars, records: [])
+            round.start()
+            rounds.append(round)
         }
-        races.append(racePerRound)
     }
-    
-    func accumulatedDistancePerCar(carIndex: Int, distance: Int) -> Int {
-        let isFirstRound: Bool = races.count == 0
-        guard isFirstRound else {
-            let lastRoundRace: [Int] = races[races.count - 1]
-            let accumulated = lastRoundRace[carIndex]
-            return distance + accumulated
-        }
-        return distance
-    }
-    
 }

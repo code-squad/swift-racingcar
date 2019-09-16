@@ -17,28 +17,26 @@ class RacingCarTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testAccumulatedDistance() {
-        var game = RacingGame(numberOfCars: 2)
-        game.races = [[1,2], [1,3]]
-        let raceOfLastRound = game.races.last!
-        let newDistanceFor1stCar: Int = 3
-        let newDistanceFor2ndCar: Int = 5
-        let accumulatedFor1stCar = game.accumulatedDistancePerCar(carIndex: 0, distance: newDistanceFor1stCar)
-        let accumulatedFor2ndCar = game.accumulatedDistancePerCar(carIndex: 1, distance: newDistanceFor2ndCar)
-        XCTAssertEqual(accumulatedFor1stCar, raceOfLastRound[0] + newDistanceFor1stCar)
-        XCTAssertEqual(accumulatedFor2ndCar, raceOfLastRound[1] + newDistanceFor2ndCar)
+    
+    func testStartRace() {
+        let carA = Car(name: "A")
+        let carB = Car(name: "B")
+        let cars = [carA, carB]
+        let numberOfRounds = 3
+        var game = RacingGame(cars: cars, numberOfRounds: numberOfRounds)
+        game.startRace()
+        XCTAssertEqual(game.rounds.count, numberOfRounds)
+        XCTAssertEqual(game.rounds.first!.records.count, cars.count)
     }
     
-    func testRace() {
-        let numberOfCars = 3
-        let numberOfRaces = 2
-        var game = RacingGame(numberOfCars: numberOfCars)
-        for _ in 1...numberOfRaces {
-            game.race()
-        }
-        XCTAssertEqual(game.races.count, numberOfRaces)
-        XCTAssertEqual(game.races.first!.count, numberOfCars)
-        XCTAssertEqual(game.races.last!.count, numberOfCars)
+    func testRound() {
+        let carA = Car(name: "A")
+        let carB = Car(name: "B")
+        let cars = [carA, carB]
+        var round = Round(cars: cars, records: [])
+        round.start()
+        XCTAssertEqual(round.cars.count, cars.count)
+        XCTAssertEqual(round.records.count, cars.count)
     }
+    
 }

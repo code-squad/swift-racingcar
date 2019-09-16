@@ -9,25 +9,36 @@
 import Foundation
 
 struct OutputView {
+    let game: RacingGame
+    var accumulatedRecords = [Int]()
     
-    static func printGame(game: RacingGame) {
-        let numberOfRounds: Int = game.races.count
-        for round in 0..<numberOfRounds {
-            let racePerRound = game.races[round]
-            recordPerRound(round: round, numberOfCars: game.numberOfCars, racePerRound: racePerRound)
+    mutating func printResult() {
+        initialAccumulatedRecords()
+        for round in game.rounds {
+            let recordsPerRound = round.records
+            prints(recordsPerRound: recordsPerRound)
         }
     }
     
-    static private func distancePerRound(carIndex: Int, racePerRound: [Int]) {
-        for _ in 0..<racePerRound[carIndex] {
+    mutating func initialAccumulatedRecords() {
+        for _ in 1...game.cars.count {
+            accumulatedRecords.append(0)
+        }
+    }
+    
+    func prints(distance: Int) {
+        for _ in 0..<distance {
             print("-", terminator: "")
         }
         print("")
     }
     
-    static private func recordPerRound(round: Int, numberOfCars: Int, racePerRound: [Int]) {
-        for car in 0..<numberOfCars {
-            distancePerRound(carIndex: car, racePerRound: racePerRound)
+    mutating func prints(recordsPerRound: [Int]) {
+        for carIndex in 0..<game.cars.count {
+            let carRecord = recordsPerRound[carIndex]
+            accumulatedRecords[carIndex] += carRecord
+            let distance = accumulatedRecords[carIndex]
+            prints(distance: distance)
         }
         print("***************")
     }
