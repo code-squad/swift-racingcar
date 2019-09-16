@@ -15,4 +15,12 @@ struct RacingResult {
     mutating func write(result: RoundResult) {
         roundResults.append(result)
     }
+    
+    func winners() -> [String]? {
+        guard let lastRace = roundResults.last,
+            let distance = lastRace.racingCars.map({ $0.distance }).max() else {
+                return nil
+        }
+        return lastRace.racingCars.filter({ $0.distance == distance }).map { $0.name }
+    }
 }

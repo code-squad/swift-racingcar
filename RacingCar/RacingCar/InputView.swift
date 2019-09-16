@@ -10,18 +10,18 @@ import Foundation
 
 
 struct InputView {
-    
-    func racingCars() -> [RacingCar] {
-        let numberOfCars = inputView.readNumberOfCar()
-        var racingCars = [RacingCar]()
-        for _ in 0..<numberOfCars {
-            racingCars.append(RacingCar())
-        }
-        return racingCars
+    func readNumberOfRounds() -> Int {
+        print("시도할 회수는 몇 회 인가요?")
+        return Int(readLine() ?? "0") ?? 0
     }
     
-    private func readNumberOfCar() -> Int {
-        print("자동차 대수는 몇 대 인가요?")
-        return Int(readLine() ?? "0") ?? 0
+    func readNameOfCars() -> [String] {
+        print("경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).")
+        return readLine()?.split(separator: ",").map({
+            guard let encodedString = String($0).removingPercentEncoding else {
+                return String($0).trimmingCharacters(in: .whitespacesAndNewlines)
+            }
+            return encodedString.trimmingCharacters(in: .whitespacesAndNewlines)
+        }) ?? []
     }
 }
