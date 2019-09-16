@@ -15,8 +15,8 @@
 import Foundation
 
 
-struct Car {
-    var step: Int
+struct Car: Comparable, Equatable {
+    private var step: Int
     var stepHistory: [Int] = []
     let name: String
     
@@ -54,5 +54,14 @@ struct Car {
         return ""
     }
     
+
+    static func < (lhs: Car, rhs: Car) -> Bool {
+        return lhs.step < rhs.step
+    }
+
+    static func == (lhs: Car, rhs: Car) -> Bool {
+        return lhs.step == rhs.step
+    }
+
 }
 

@@ -18,19 +18,27 @@ import Foundation
 class RacingGame {
     var cars = [Car]()
     
-    init(numberOfCar: Int) {
+    convenience init(numberOfCar: Int) {
+        var names: [String] = []
         for _ in 1...numberOfCar {
-            self.cars.append(Car())
+            names.append("")
         }
+        self.init(carNames: names)
     }
     
     init(carNames: [String]) {
         for carName in carNames {
-            self.cars.append(Car(name: carName))
+            var car: Car
+            if !carName.isEmpty {
+                car = Car(name: carName)
+            } else {
+                car = Car()
+            }
+            self.cars.append(car)
         }
     }
     
-    func playOneRound() {
+    private func playOneRound() {
         for i in 0..<self.cars.count{
             let random = Int.random(in: 0...9)
             let isMove = self.needToMove(random: random)
@@ -54,15 +62,15 @@ class RacingGame {
     }
     
     func winners() -> [Car] {
-        var maxStep = 0
+        var maxStepCar = Car(initStep: 0)
         for car in self.cars {
-            if maxStep < car.step {
-                maxStep = car.step
+            if maxStepCar < car {
+                maxStepCar = car
             }
         }
         var winners: [Car] = []
         for car in self.cars {
-            if car.step == maxStep {
+            if car == maxStepCar {
                 winners.append(car)
             }
         }
