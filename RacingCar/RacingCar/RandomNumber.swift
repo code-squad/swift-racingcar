@@ -16,12 +16,13 @@ extension Int {
 }
 
 struct RandomNumber {
+    static let GoingLimit = 4
     private var random : Int = 0
     init(value : Int) {
         random = value
     }
     
     func isGoing() -> Bool {
-        return (random >= 4)
+        return (random >= RandomNumber.GoingLimit)
     }
 }
