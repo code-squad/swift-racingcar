@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DCBA6432327E92F0045CCD7 /* InputViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCBA6422327E92F0045CCD7 /* InputViewTest.swift */; };
+		2DCBA64B2327E96F0045CCD7 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCBA64A2327E96F0045CCD7 /* Car.swift */; };
+		2DCBA64E2327EBAD0045CCD7 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCBA6482327E9460045CCD7 /* InputView.swift */; };
+		2DCBA64F2327ECDC0045CCD7 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCBA64A2327E96F0045CCD7 /* Car.swift */; };
+		2DCBA6512327F3CD0045CCD7 /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCBA6502327F3CD0045CCD7 /* RacingGame.swift */; };
+		2DCBA6532327F3D90045CCD7 /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCBA6522327F3D90045CCD7 /* OutputView.swift */; };
+		2DCBA6542327F6800045CCD7 /* RacingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCBA6502327F3CD0045CCD7 /* RacingGame.swift */; };
+		2DCBA6552327F6830045CCD7 /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCBA6522327F3D90045CCD7 /* OutputView.swift */; };
+		2DCBA6562327F6C50045CCD7 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCBA6482327E9460045CCD7 /* InputView.swift */; };
+		2DCBA658232958340045CCD7 /* RacingGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCBA657232958340045CCD7 /* RacingGameTest.swift */; };
 		8332F7602073755D00B11845 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8332F75F2073755D00B11845 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,11 +33,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2DCBA6402327E92F0045CCD7 /* RacingCarTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DCBA6422327E92F0045CCD7 /* InputViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewTest.swift; sourceTree = "<group>"; };
+		2DCBA6442327E92F0045CCD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DCBA6482327E9460045CCD7 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		2DCBA64A2327E96F0045CCD7 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		2DCBA6502327F3CD0045CCD7 /* RacingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGame.swift; sourceTree = "<group>"; };
+		2DCBA6522327F3D90045CCD7 /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
+		2DCBA657232958340045CCD7 /* RacingGameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameTest.swift; sourceTree = "<group>"; };
 		8332F75C2073755D00B11845 /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		8332F75F2073755D00B11845 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2DCBA63D2327E92F0045CCD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8332F7592073755D00B11845 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -38,10 +63,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DCBA6412327E92F0045CCD7 /* RacingCarTest */ = {
+			isa = PBXGroup;
+			children = (
+				2DCBA6422327E92F0045CCD7 /* InputViewTest.swift */,
+				2DCBA657232958340045CCD7 /* RacingGameTest.swift */,
+				2DCBA6442327E92F0045CCD7 /* Info.plist */,
+			);
+			path = RacingCarTest;
+			sourceTree = "<group>";
+		};
 		8332F7532073755D00B11845 = {
 			isa = PBXGroup;
 			children = (
 				8332F75E2073755D00B11845 /* RacingCar */,
+				2DCBA6412327E92F0045CCD7 /* RacingCarTest */,
 				8332F75D2073755D00B11845 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				8332F75C2073755D00B11845 /* RacingCar */,
+				2DCBA6402327E92F0045CCD7 /* RacingCarTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +95,10 @@
 			isa = PBXGroup;
 			children = (
 				8332F75F2073755D00B11845 /* main.swift */,
+				2DCBA64A2327E96F0045CCD7 /* Car.swift */,
+				2DCBA6482327E9460045CCD7 /* InputView.swift */,
+				2DCBA6502327F3CD0045CCD7 /* RacingGame.swift */,
+				2DCBA6522327F3D90045CCD7 /* OutputView.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -65,6 +106,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2DCBA63F2327E92F0045CCD7 /* RacingCarTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DCBA6472327E92F0045CCD7 /* Build configuration list for PBXNativeTarget "RacingCarTest" */;
+			buildPhases = (
+				2DCBA63C2327E92F0045CCD7 /* Sources */,
+				2DCBA63D2327E92F0045CCD7 /* Frameworks */,
+				2DCBA63E2327E92F0045CCD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RacingCarTest;
+			productName = RacingCarTest;
+			productReference = 2DCBA6402327E92F0045CCD7 /* RacingCarTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8332F75B2073755D00B11845 /* RacingCar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8332F7632073755D00B11845 /* Build configuration list for PBXNativeTarget "RacingCar" */;
@@ -88,12 +146,16 @@
 		8332F7542073755D00B11845 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = JK;
 				TargetAttributes = {
+					2DCBA63F2327E92F0045CCD7 = {
+						CreatedOnToolsVersion = 10.3;
+					};
 					8332F75B2073755D00B11845 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -103,6 +165,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 8332F7532073755D00B11845;
 			productRefGroup = 8332F75D2073755D00B11845 /* Products */;
@@ -110,22 +173,89 @@
 			projectRoot = "";
 			targets = (
 				8332F75B2073755D00B11845 /* RacingCar */,
+				2DCBA63F2327E92F0045CCD7 /* RacingCarTest */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		2DCBA63E2327E92F0045CCD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		2DCBA63C2327E92F0045CCD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DCBA6552327F6830045CCD7 /* OutputView.swift in Sources */,
+				2DCBA6542327F6800045CCD7 /* RacingGame.swift in Sources */,
+				2DCBA64F2327ECDC0045CCD7 /* Car.swift in Sources */,
+				2DCBA658232958340045CCD7 /* RacingGameTest.swift in Sources */,
+				2DCBA64E2327EBAD0045CCD7 /* InputView.swift in Sources */,
+				2DCBA6432327E92F0045CCD7 /* InputViewTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8332F7582073755D00B11845 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DCBA6562327F6C50045CCD7 /* InputView.swift in Sources */,
+				2DCBA6512327F3CD0045CCD7 /* RacingGame.swift in Sources */,
 				8332F7602073755D00B11845 /* main.swift in Sources */,
+				2DCBA64B2327E96F0045CCD7 /* Car.swift in Sources */,
+				2DCBA6532327F3D90045CCD7 /* OutputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		2DCBA6452327E92F0045CCD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RacingCarTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.RacingCarTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2DCBA6462327E92F0045CCD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = RacingCarTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.RacingCarTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		8332F7612073755D00B11845 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -244,7 +374,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -253,13 +383,22 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2DCBA6472327E92F0045CCD7 /* Build configuration list for PBXNativeTarget "RacingCarTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DCBA6452327E92F0045CCD7 /* Debug */,
+				2DCBA6462327E92F0045CCD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8332F7572073755D00B11845 /* Build configuration list for PBXProject "RacingCar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
