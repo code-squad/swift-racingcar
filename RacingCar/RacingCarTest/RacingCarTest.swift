@@ -23,18 +23,35 @@ class RacingCarTest: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    //RacingGame
-    //init(numberOfCar: Int) {
-    //mutating func playOneRound() {
-    //static let MoveOrNot = 4
-    //func needToMove(random: Int) -> Bool {
-    //mutating func playGame(times: Int) {
-    //mutating func run() {
+    
+    
+    func test_InputHandler_canUseInputStr() {
+        var testInput = ""
+        XCTAssertFalse(InputHandler.canUseInputStr(testInput))
+        testInput = "a,b,c"
+        XCTAssertTrue(InputHandler.canUseInputStr(testInput))
+    }
+    
+    func test_InputHandler_seperatePlayerName() {
+        let testInput = "aa,bb,cc"
+        let resultNames = InputHandler.seperatePlayerName(names: testInput)
+        XCTAssert(resultNames == ["aa", "bb", "cc"])
+    }
+    
+    
     
     func test_RacingGame_init() {
         let game = RacingGame(numberOfCar: 3)
         XCTAssert(game.cars.count == 3)
+    }
+    
+    func test_RacingGame_initByName() {
+        let names: [String] = ["aaa", "bbb", "ccc"]
+        let game = RacingGame(carNames: names)
+        XCTAssert(game.cars.count == 3)
+        XCTAssert(game.cars[0].name == "aaa")
+        XCTAssert(game.cars[1].name == "bbb")
+        XCTAssert(game.cars[2].name == "ccc")
     }
     
     func test_RacingGame_needToMove() {
@@ -46,42 +63,44 @@ class RacingCarTest: XCTestCase {
     }
     
     func test_RacingGame_playGame() {
-        var game = RacingGame(numberOfCar: 3)
+        let game = RacingGame(numberOfCar: 3)
         let playCount = 5
         game.playGame(times: playCount)
         XCTAssert(game.cars.first?.stepHistory.count == playCount)
     }
     
     func test_RacingGame_run() {
-        var game = RacingGame(numberOfCar: 3)
+        let game = RacingGame(numberOfCar: 3)
         game.run()
         XCTAssert(game.cars.first?.stepHistory.count == 3)
     }
+    
+    func test_RacingGame_winner() {
+        let game = RacingGame(carNames: ["a", "b"])
+        game.cars[0].playOneRound(canMove: true)
+        game.cars[1].playOneRound(canMove: false)
+        let winners = game.winners()
+        XCTAssert(winners.count == 1)
+        XCTAssert(winners[0].name == "a")
+    }
 
-
-    //Car
-    //init(step: Int = 1) {
-    //mutating func playOneRound(canMove: Bool) {
-    //func printStep(_ step: Int) -> String {
-    //func printStepHistory(at: Int) -> String {
-    func test_Car_init() {
+    
+    
+    func test_Car_init_and_playOneRound() {
         let car = Car(initStep: 2)
-        XCTAssert(car.step == 2)
+        var car2 = Car(initStep: 1)
+        car2.playOneRound(canMove: true)
+        XCTAssert(car == car2)
     }
-    func test_Car_playOneRound() {
-        var car = Car(initStep: 1)
-        car.playOneRound(canMove: true)
-        XCTAssert(car.step == 2)
-    }
+
     func test_Car_stepHistory() {
         var car = Car(initStep: 1)
         car.playOneRound(canMove: true)
         XCTAssert(car.stepHistory.count == 1)
     }
     
-    //output
-    //static func detectRoundCount(car: Car?) -> Int
-    //static func printOneRound(at index: Int, cars: [Car])
+    
+
     func test_Output_detectRoundCount() {
         var game = RacingGame(numberOfCar: 3)
         let playCount = 5
