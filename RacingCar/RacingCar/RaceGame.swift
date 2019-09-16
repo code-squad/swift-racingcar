@@ -10,9 +10,10 @@ import Foundation
 
 struct RaceGame {
     private var cars = [Car]()
-    init(tries: Int) {
-        for _ in 0..<tries {
-            let car = Car()
+    init?(with names: [String]) {
+        guard names.count > 0 else { return nil }
+        for name in names {
+            let car = Car(with: name)
             cars.append(car)
         }
     }
@@ -20,17 +21,13 @@ struct RaceGame {
     func run() -> String {
         var result = ""
         for car in cars {
-            for _ in 0..<car.position {
+            result += "\(car.name): "
+            let random = RandomNumber(value: Int.random(maxValue: Int.RANDOM_MAX_VALUE))
+            car.moveForward(by: random)
+            car.iterate{ position in
                 result += "-"
             }
-            let random = RandomNumber(value: Int.random(maxValue: Int.RANDOM_MAX_VALUE))
-            car.moveForward(byRandom: random)
-            if random.isGoing() {
-                result += "-\n"
-            }
-            else {
-                result += "\n"
-            }
+            result += "\n"
         }
         return result
     }

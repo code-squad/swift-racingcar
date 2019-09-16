@@ -9,17 +9,25 @@
 import Foundation
 
 class Car {
-    private(set) var position : Int = 0
+    let name : String
+    private var position : Int = 0
     
-    init() {
+    init(with name: String) {
+        self.name = name
     }
     
     fileprivate func incrementPosition() {
         position = position + 1
     }
     
-    func moveForward(byRandom : RandomNumber) {
-        if byRandom.isGoing() {
+    func iterate(_ transform: (Int)->(Void)) {
+        for index in 0..<position {
+            transform(index)
+        }
+    }
+    
+    func moveForward(by random : RandomNumber) {
+        if random.isGoing() {
             incrementPosition()
         }
     }
