@@ -8,3 +8,19 @@
 
 import Foundation
 
+struct OutputView {
+    static func printResult(_ game : RaceGame, tries : Int) {
+        for _ in 0..<tries {
+            print(game.run())
+            print("=========")
+        }
+    }
+}
+
+func main() {
+    let game = RaceGame(tries: 3)
+    OutputView.printResult(game, tries: 3)
+}
+
+
+main()
