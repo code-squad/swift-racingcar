@@ -8,5 +8,12 @@
 
 import Foundation
 
-let numberOfGames = RacingGame.getNumberOfCars()
-RacingGame.playGames(for: numberOfGames)
+func main() {
+	var game = RacingGame()
+	let printer = Printer()
+	game.getNumberOfCars()
+	game.run()
+	printer.display(printable: game)
+}
+
+main()
