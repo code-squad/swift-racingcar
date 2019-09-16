@@ -9,6 +9,10 @@
 import Foundation
 
 struct RacingResult {
-    let round: UInt
-    var racingCars: [RacingCar]
+    
+    var roundResults: [RoundResult] = Array()
+    
+    mutating func write(result: RoundResult) {
+        roundResults.append(result)
+    }
 }

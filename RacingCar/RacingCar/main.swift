@@ -11,8 +11,13 @@ import Foundation
 let inputView = InputView()
 let racingCars = inputView.racingCars()
 
-var game = RacingCarGame(numberOfPlay: 3, racingCars: racingCars)
-game.play()
+var game = RacingCarGame(racingCars: racingCars)
+var racingResult = RacingResult()
 
-let outputView = OutputView(game: game)
-outputView.showWinner()
+for _ in 0...2 {
+    let result = game.run()
+    racingResult.write(result: result)
+}
+
+let resultView = RacingResultView(racingResult: racingResult)
+resultView.showRacingResult()
