@@ -13,14 +13,11 @@ let carNames = inputView.readNameOfCars()
 let totalRounds = inputView.readNumberOfRounds()
 
 let racingCars = carNames.map { RacingCar(name: $0) }
-var game = RacingCarGame(racingCars: racingCars)
+let game = RacingCarGame(racingCars: racingCars)
 
-var racingResult = RacingResult()
-for _ in 0..<totalRounds {
-    let result = game.run()
-    racingResult.write(result: result)
-}
+var looper = RacingGameLooper(game: game)
+looper.play(count: totalRounds)
 
-let resultView = RacingResultView(racingResult: racingResult)
+let resultView = RacingResultView(racingResult: looper.racingResult)
 resultView.showRacingResult()
 resultView.showWinners()

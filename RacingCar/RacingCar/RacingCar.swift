@@ -17,8 +17,8 @@ struct RacingCar {
         self.distance = distance
     }
     
-    func distance(for number: UInt32) -> UInt {
-        return (number > 4) ? 1 : 0
+    func distance(for speed: UInt32) -> UInt {
+        return (speed > RacingGameConstants.minValidSpeed) ? 1 : 0
     }
     
     mutating func race() {

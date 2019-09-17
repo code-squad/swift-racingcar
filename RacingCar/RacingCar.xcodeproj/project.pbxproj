@@ -21,6 +21,11 @@
 		CF6EBB5E232FE95000299C84 /* RacingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6EBB4A232FCFEF00299C84 /* RacingResult.swift */; };
 		CF6EBB5F232FE95700299C84 /* RacingCarGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB409DB4231FB97800744B46 /* RacingCarGame.swift */; };
 		CF6EBB60232FEC3F00299C84 /* RoundResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BF467232A468F0013DFF5 /* RoundResult.swift */; };
+		CF752EC223311B0700844D13 /* RacingGameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF752EC123311B0700844D13 /* RacingGameConstants.swift */; };
+		CFCD89C823311F62008A9215 /* RacingGameLooper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCD89C723311F62008A9215 /* RacingGameLooper.swift */; };
+		CFCD89CA233124DF008A9215 /* RacingGameLooperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCD89C9233124DF008A9215 /* RacingGameLooperTests.swift */; };
+		CFCD89CB23312546008A9215 /* RacingGameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF752EC123311B0700844D13 /* RacingGameConstants.swift */; };
+		CFCD89CC233125D8008A9215 /* RacingGameLooper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCD89C723311F62008A9215 /* RacingGameLooper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +54,9 @@
 		CF6EBB54232FE1C800299C84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF6EBB5A232FE20B00299C84 /* RacingCarGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingCarGameTests.swift; sourceTree = "<group>"; };
 		CF6EBB5C232FE22C00299C84 /* RacingResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingResultTests.swift; sourceTree = "<group>"; };
+		CF752EC123311B0700844D13 /* RacingGameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameConstants.swift; sourceTree = "<group>"; };
+		CFCD89C723311F62008A9215 /* RacingGameLooper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameLooper.swift; sourceTree = "<group>"; };
+		CFCD89C9233124DF008A9215 /* RacingGameLooperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacingGameLooperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				8332F75F2073755D00B11845 /* main.swift */,
+				CF752EC123311B0700844D13 /* RacingGameConstants.swift */,
+				CFCD89C723311F62008A9215 /* RacingGameLooper.swift */,
 				BB409DB2231FB92800744B46 /* RacingCar.swift */,
 				CF6EBB4A232FCFEF00299C84 /* RacingResult.swift */,
 				CF6BF467232A468F0013DFF5 /* RoundResult.swift */,
@@ -108,6 +118,7 @@
 				CF6EBB52232FE1C800299C84 /* RacingCarTests.swift */,
 				CF6EBB5C232FE22C00299C84 /* RacingResultTests.swift */,
 				CF6EBB5A232FE20B00299C84 /* RacingCarGameTests.swift */,
+				CFCD89C9233124DF008A9215 /* RacingGameLooperTests.swift */,
 				CF6EBB54232FE1C800299C84 /* Info.plist */,
 			);
 			path = RacingCarTests;
@@ -201,6 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFCD89C823311F62008A9215 /* RacingGameLooper.swift in Sources */,
+				CF752EC223311B0700844D13 /* RacingGameConstants.swift in Sources */,
 				CF6BF468232A468F0013DFF5 /* RoundResult.swift in Sources */,
 				CF6BF466232A40940013DFF5 /* RacingResultView.swift in Sources */,
 				CF6EBB4B232FCFEF00299C84 /* RacingResult.swift in Sources */,
@@ -215,8 +228,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFCD89CA233124DF008A9215 /* RacingGameLooperTests.swift in Sources */,
 				CF6EBB5E232FE95000299C84 /* RacingResult.swift in Sources */,
 				CF6EBB60232FEC3F00299C84 /* RoundResult.swift in Sources */,
+				CFCD89CB23312546008A9215 /* RacingGameConstants.swift in Sources */,
+				CFCD89CC233125D8008A9215 /* RacingGameLooper.swift in Sources */,
 				CF6EBB5D232FE22C00299C84 /* RacingResultTests.swift in Sources */,
 				CF6EBB59232FE1E100299C84 /* RacingCar.swift in Sources */,
 				CF6EBB53232FE1C800299C84 /* RacingCarTests.swift in Sources */,

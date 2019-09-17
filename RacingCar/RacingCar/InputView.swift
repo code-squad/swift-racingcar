@@ -10,9 +10,9 @@ import Foundation
 
 
 struct InputView {
-    func readNumberOfRounds() -> Int {
+    func readNumberOfRounds() -> UInt {
         print("시도할 회수는 몇 회 인가요?")
-        return Int(readLine() ?? "0") ?? 0
+        return UInt(readLine() ?? "0") ?? 0
     }
     
     func readNameOfCars() -> [String] {
