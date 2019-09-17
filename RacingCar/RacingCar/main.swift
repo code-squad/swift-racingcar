@@ -9,11 +9,16 @@
 import Foundation
 
 func main() {
-	var game = RacingGame()
-	let printer = Printer()
-	game.getNumberOfCars()
-	game.run()
-	printer.display(printable: game)
+	do {
+		var game = RacingGame()
+		let printer = Printer()
+		let numberOfCars = game.getNumberOfCars()
+		try game.setup(with: numberOfCars)
+		try game.run()
+		printer.display(printable: game)
+	} catch let error {
+		print(error)
+	}
 }
 
 main()

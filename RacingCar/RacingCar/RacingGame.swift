@@ -12,23 +12,38 @@ struct RacingGame {
 	var numberOfCars = 0
 	var result = ""
 	
-	mutating func getNumberOfCars() {
+	enum RacingError: Error {
+		case invalidNumberOfCars
+		case notReadyForRacing
+	}
+	
+	func getNumberOfCars() -> Int {
 		print("자동차 대수는 몇 대 인가요?")
-		numberOfCars = Int(readLine() ?? "") ?? 0
+		return Int(readLine() ?? "") ?? 0
 	}
 	
-	mutating func setup(_ numberOfCars: Int) {
+	@discardableResult
+	mutating func setup(with numberOfCars: Int) throws -> Bool {
+		guard numberOfCars > 0 else {
+			throw RacingError.invalidNumberOfCars
+		}
 		self.numberOfCars = numberOfCars
+		return true
 	}
 	
-	mutating func run() {
+	@discardableResult
+	mutating func run() throws -> Bool {
+		guard numberOfCars != 0 else {
+			throw RacingError.notReadyForRacing
+		}
 		result += "\n"
 		for _ in 0..<3 {
 			playGame()
 		}
+		return true
 	}
 	
-	mutating func playGame() {
+	private mutating func playGame() {
 		for _ in 0..<numberOfCars {
 			result += Car().makeResult()
 			result += "\n"
