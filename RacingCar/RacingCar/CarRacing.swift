@@ -32,8 +32,6 @@ struct CarRacing {
             //self.racingResultsString.append("race \(count).\r\n")
             self.racingResultsString.append("\(self.getMoveResult())\r\n")
         }
-        
-        self.racingResultsString.append("\(self.getWinnerResult(racedCars: racingCars))\r\n")
     }
     
     private mutating func moveRacingCars() {
@@ -51,32 +49,6 @@ struct CarRacing {
         return resultString
     }
     
-    private func getWinnerResult(racedCars: [Car]) -> String {
-        guard let winners = selectFinalWinner(racedCars) else {
-            return "there are no winners"
-        }
-        
-        let winnerString = winners.joined(separator:", ")
-        let resultString = winnerString + "가 최종 우승했습니다."
-        
-        return resultString
-    }
-    
-    private func selectFinalWinner(_ racedCars : [Car]) -> [String]? {
-        guard let maxDistance = getMaxDistance(racedCars: racedCars) else {
-            return nil
-        }
-        let winnerCars = getWinnerCars(racedCars: racedCars, maxDistance: maxDistance)
-        
-        var finalWinner : [String] = []
-        
-        for winner in winnerCars {
-            finalWinner.append(winner.name)
-        }
-        
-        return finalWinner
-    }
-    
     private mutating func resetResult() {
         racingResultsString = ""
         
@@ -89,12 +61,21 @@ struct CarRacing {
         return racingResultsString
     }
     
+    
     func getMaxDistance(racedCars: [Car]) -> Int? {
         return racedCars.map { $0.distance }.max()
+    }
+    
+    func getWinnerCars() -> [Car]? {
+        guard let maxDistance = getMaxDistance(racedCars: self.racingCars) else {
+            return nil
+        }
+        
+        let winnerCars = getWinnerCars(racedCars: self.racingCars, maxDistance: maxDistance)
+        return winnerCars
     }
     
     func getWinnerCars(racedCars:[Car], maxDistance:Int) -> [Car] {
         return racedCars.filter {$0.distance == maxDistance}
     }
-    
 }
