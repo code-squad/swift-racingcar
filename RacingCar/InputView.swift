@@ -10,6 +10,16 @@ import Foundation
 
 struct InputView {
     
+    static func readCars() -> [Car] {
+        print("Please enter a car name to join. (Separate names with commas)")
+        return cars(inputValue: readLine() ?? "")
+    }
+    
+    static func readIterations() -> Int {
+        print("Please enter the number of challenges")
+        return count(inputValue: readLine() ?? "")
+    }
+    
     static func cars(inputValue: String) -> [Car] {
         return inputValue.split(separator: ",")
             .map { String($0) }

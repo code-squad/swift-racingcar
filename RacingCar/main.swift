@@ -8,10 +8,8 @@
 
 import Foundation
 
-print("Please enter a car name to join. (Separate names with commas)")
-let cars = InputView.cars(inputValue: readLine() ?? "")
-print("Please enter the number of challenges")
-let iterations = InputView.count(inputValue: readLine() ?? "")
+let cars = InputView.readCars()
+let iterations = InputView.readIterations()
 let game = RacingGame(cars: cars, iterations: iterations)
 game.run()
 OutputView.printGameResult(racingGame: game)

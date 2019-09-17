@@ -29,6 +29,9 @@ class RacingCarTest: XCTestCase {
     func testInputViewCount() {
         let count = InputView.count(inputValue: "5")
         XCTAssert(count == 5)
+        
+        let count2 = InputView.count(inputValue: "")
+        XCTAssert(count2 == 0)
     }
 
     func testPerformanceExample() {
