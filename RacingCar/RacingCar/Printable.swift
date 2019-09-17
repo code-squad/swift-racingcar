@@ -9,6 +9,7 @@
 import Foundation
 
 protocol Printable {
-	func display()
+	var record: String { get }
+	var winnerMessage: String { get }
 }
 

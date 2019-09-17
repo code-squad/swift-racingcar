@@ -8,15 +8,38 @@
 
 import Foundation
 
-struct RacingGame {
-	var numberOfGames = 0
-	var cars = [Car]()
-	var result = ""
-	
+struct RacingGame: Printable {
 	enum RacingError: Error {
 		case invalidNumberOfGames
 		case invalidRacerList
 		case notReadyForRacing
+	}
+	
+	private(set) var record = ""
+	var winnerMessage: String {
+		return "\(topRacerList.joined(separator: ", "))가 최종 우승했습니다."
+	}
+
+	private var numberOfGames = 0
+	private var cars = [Car]()
+	
+	var topRecord: Int {
+		guard let position = cars.sorted().last?.position else {
+			return 0
+		}
+		return position
+	}
+	
+	var topCarList: [Car] {
+		guard topRecord > 0 else { return [] }
+		return cars
+			.filter { $0.position == topRecord }
+	}
+	
+	var topRacerList: [String] {
+		guard topRecord > 0 else { return [] }
+		return topCarList
+			.map { $0.racerName }
 	}
 			
 	@discardableResult
@@ -37,7 +60,7 @@ struct RacingGame {
 		guard numberOfGames > 0, cars.count > 0 else {
 			throw RacingError.notReadyForRacing
 		}
-		result += "\n"
+		record += "\n"
 		for _ in 0..<numberOfGames {
 			playGame()
 		}
@@ -46,26 +69,9 @@ struct RacingGame {
 	
 	private mutating func playGame() {
 		for (_, car) in cars.enumerated() {
-			car.move()
-			result += car.currentState()
+			car.move(luck: Int.random(in: 0...9))
+			record += car.currentState()
 		}
-		result += "\n"
-	}
-	
-	var winnerMessage: String {
-		return "\(topRacerList.joined(separator: ", "))가 최종 우승했습니다."
-	}
-	
-	var topRecord: Int {
-		guard let position = cars.sorted().last?.position else {
-			return 0
-		}
-		return position
-	}
-	
-	var topRacerList: [String] {
-		return cars
-			.filter { $0.position == topRecord }
-			.map { $0.racerName }
+		record += "\n"
 	}
 }

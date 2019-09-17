@@ -8,25 +8,16 @@
 
 import Foundation
 
-class Car: Comparable {
-	static func < (lhs: Car, rhs: Car) -> Bool {
-		return lhs.position < rhs.position
-	}
-	
-	static func == (lhs: Car, rhs: Car) -> Bool {
-		return lhs.racerName == rhs.racerName
-	}
-	
+class Car {
 	let racerName: String
-	var position = 0
+	private(set) var position = 0
 	
 	init(racerName: String) {
 		self.racerName = racerName
 	}
 	
-	func move() {
-		let random = Int.random(in: 0...9)
-		if random >= 4 {
+	func move(luck: Int) {
+		if luck >= 4 {
 			position += 1
 		}
 	}
@@ -35,6 +26,17 @@ class Car: Comparable {
 		let state = Array(0..<position)
 			.map { _ in "-" }
 			.joined()
+		guard state.count > 0 else { return "" }
 		return "\(racerName) : \(state) \n"
+	}
+}
+
+extension Car: Comparable {
+	static func < (lhs: Car, rhs: Car) -> Bool {
+		return lhs.position < rhs.position
+	}
+	
+	static func == (lhs: Car, rhs: Car) -> Bool {
+		return lhs.racerName == rhs.racerName
 	}
 }

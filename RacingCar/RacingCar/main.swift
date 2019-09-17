@@ -11,7 +11,7 @@ import Foundation
 func main() {
 	do {
 		var game = RacingGame()
-		let printer = Printer()
+		let outputView = OutputView()
 		let racerList = InputView.getRacerList()
 		let numberOfGames = InputView.getNumberOfGames()
 		try game.setup(
@@ -19,7 +19,7 @@ func main() {
 			racerList: racerList
 		)
 		try game.run()
-		printer.display(printable: game)
+		outputView.display(game)
 	} catch let error {
 		print(error)
 	}
