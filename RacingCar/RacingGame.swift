@@ -9,7 +9,7 @@
 import Foundation
 
 struct RacingGame {
-    private let cars: [Car]
+    public let cars: [Car]
     private let iterations: Int
     
     init(cars: [Car], iterations: Int) {
@@ -33,15 +33,5 @@ struct RacingGame {
     
     func winRaces() -> [Car] {
         return cars.filter { $0.position == maxPosition() }
-    }
-    
-    func printResult() {
-        for index in 0 ..< cars.count {
-            print("\(cars[index].carName) : ", terminator: "")
-            for _ in 0 ..< cars[index].position {
-                print("-", terminator: "")
-            }
-            print("")
-        }
     }
 }

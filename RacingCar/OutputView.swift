@@ -10,8 +10,18 @@ import Foundation
 
 struct OutputView {
     
+    static func printResult(cars: [Car]) {
+        for index in 0 ..< cars.count {
+            print("\(cars[index].carName) : ", terminator: "")
+            for _ in 0 ..< cars[index].position {
+                print("-", terminator: "")
+            }
+            print("")
+        }
+    }
+    
     static func printGameResult(racingGame: RacingGame) {
-        racingGame.printResult()
+        printResult(cars: racingGame.cars)
         let winCars = racingGame.winRaces()
                             .map { $0.carName }
         let carNames = winCars.joined(separator: ",")
