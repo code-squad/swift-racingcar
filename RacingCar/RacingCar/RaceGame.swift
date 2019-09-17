@@ -18,17 +18,7 @@ struct RaceGame {
         }
     }
     
-    func run() -> String {
-        var result = ""
-        for car in cars {
-            result += "\(car.name): "
-            let random = RandomNumber(value: Int.random(maxValue: Int.RANDOM_MAX_VALUE))
-            car.moveForward(by: random)
-            car.iterate{ position in
-                result += "-"
-            }
-            result += "\n"
-        }
-        return result
+    func run(_ transform: (Car)->()) {
+        cars.forEach{ transform($0) }
     }
 }

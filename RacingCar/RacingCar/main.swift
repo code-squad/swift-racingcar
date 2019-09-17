@@ -8,25 +8,6 @@
 
 import Foundation
 
-struct OutputView {
-    static func display(_ result: String) {
-        print("\(result)=========")
-    }
-}
-
-struct GameController {
-    private let game : RaceGame
-    init(with game: RaceGame) {
-        self.game = game
-    }
-    
-    func go(tries: Int, resultHandler: (String)->()) {
-        for _ in 0..<tries {
-            resultHandler(game.run())
-        }
-    }
-}
-
 func main() {
     let numberOfTry = InputView.readNumberOfTry()
     let rawName = InputView.readCarNames()
@@ -35,9 +16,12 @@ func main() {
     let game = RaceGame(with: names)
     guard let realGame = game else { return }
     let controller = GameController(with: realGame)
-    controller.go(tries: numberOfTry, resultHandler: { result in
-        OutputView.display(result)
-    })
+    controller.go(tries: numberOfTry,
+                gameHandler:
+                {   game in
+                    OutputView.display(with: game)
+                }
+    )
 }
 
 main()
