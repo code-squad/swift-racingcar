@@ -16,6 +16,9 @@
 		838BF168232F96A400354846 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838BF155232F65C400354846 /* Car.swift */; };
 		838BF169232F96A400354846 /* RaceGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838BF156232F65C400354846 /* RaceGame.swift */; };
 		838BF16A232F96A400354846 /* RandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838BF154232F65C400354846 /* RandomNumber.swift */; };
+		838BF16C2331117100354846 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838BF16B2331117100354846 /* GameController.swift */; };
+		838BF16E2331117E00354846 /* OutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838BF16D2331117E00354846 /* OutputView.swift */; };
+		838BF16F2331146500354846 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838BF16B2331117100354846 /* GameController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +43,8 @@
 		838BF160232F83ED00354846 /* UnitTestCars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestCars.swift; sourceTree = "<group>"; };
 		838BF162232F83ED00354846 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		838BF166232F842200354846 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		838BF16B2331117100354846 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		838BF16D2331117E00354846 /* OutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +91,8 @@
 				838BF156232F65C400354846 /* RaceGame.swift */,
 				838BF154232F65C400354846 /* RandomNumber.swift */,
 				8332F75F2073755D00B11845 /* main.swift */,
+				838BF16B2331117100354846 /* GameController.swift */,
+				838BF16D2331117E00354846 /* OutputView.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -190,6 +197,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				838BF158232F65C400354846 /* RaceGame.swift in Sources */,
+				838BF16C2331117100354846 /* GameController.swift in Sources */,
+				838BF16E2331117E00354846 /* OutputView.swift in Sources */,
 				8332F7602073755D00B11845 /* main.swift in Sources */,
 				838BF167232F842200354846 /* InputView.swift in Sources */,
 				838BF159232F65C400354846 /* Car.swift in Sources */,
@@ -201,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				838BF16F2331146500354846 /* GameController.swift in Sources */,
 				838BF168232F96A400354846 /* Car.swift in Sources */,
 				838BF169232F96A400354846 /* RaceGame.swift in Sources */,
 				838BF16A232F96A400354846 /* RandomNumber.swift in Sources */,

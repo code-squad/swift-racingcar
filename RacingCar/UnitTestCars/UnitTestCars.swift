@@ -31,6 +31,37 @@ class UnitTestRaceCar: XCTestCase {
         XCTAssertNil(game)
     }
     
+    func testRaceGame_Match_FirstCar() {
+        let dummy = ["jk"]
+        let game = RaceGame(with: dummy)
+        game?.run{ car in
+            XCTAssertEqual(car.name, "jk")
+        }
+    }
+    
+    func testRaceGameController_Make_Success() {
+        let dummy = ["jk"]
+        let game = RaceGame(with: dummy)!
+        let controller = GameController.init(with: game)
+        XCTAssertNotNil(controller)
+    }
+
+    func testRaceGameController_BasicStory_3Try_Success() {
+        let dummy = ["jk"]
+        let tries = 3
+        let game = RaceGame(with: dummy)!
+        let controller = GameController.init(with: game)
+        var result = 0
+        controller.go(tries: tries, gameHandler: { game in
+            game.run{ car in
+                car.moveForward(by: RandomNumber.init(value: 5))
+                car.iterate({ position in result = position+1 })
+            }
+        })
+        XCTAssertEqual(result, tries)
+    }
+
+    
     func testRandomNumber_Make_Success() {
         let random = RandomNumber(value: Int.random(maxValue: Int.RANDOM_MAX_VALUE))
         XCTAssertNotNil(random)
