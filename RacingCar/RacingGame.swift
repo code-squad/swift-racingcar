@@ -17,11 +17,15 @@ struct RacingGame {
         self.iterations = iterations
     }
     
+    func setPosition(atIndex index: Int, random: Int) {
+        let isForward = random >= 4 ? true : false
+        cars[index].position = (isForward ? 1 : 0)
+    }
+    
     func run() {
         for _ in 0 ..< iterations {
             for index in 0 ..< cars.count {
-                let isForward = (Int.random(in: 0...9) >= 4) ? true : false
-                cars[index].position = (isForward ? 1 : 0)
+                setPosition(atIndex: index, random: Int.random(in: 0...9))
             }
         }
     }
