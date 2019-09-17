@@ -100,6 +100,20 @@ class RacingCarUnitTest: XCTestCase {
         }
     }
     
+    func test_CarRacing_init_safely() {
+        var emptyCarRacing = CarRacing(carNames: [])
+        emptyCarRacing.runRacing(times: 10)
+        
+        XCTAssertNil(emptyCarRacing.getWinnerCars())
+        
+        var oneCarRacing = CarRacing(carNames: ["alone"])
+        oneCarRacing.runRacing(times: 10)
+        
+        let winner = oneCarRacing.getWinnerCars()
+        
+        XCTAssertNotNil(winner)
+        XCTAssertEqual(winner?[0].name, "alone")
+    }
     
 
     func testPerformanceExample() {
