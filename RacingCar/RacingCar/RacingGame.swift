@@ -9,45 +9,63 @@
 import Foundation
 
 struct RacingGame {
-	var numberOfCars = 0
+	var numberOfGames = 0
+	var cars = [Car]()
 	var result = ""
 	
 	enum RacingError: Error {
-		case invalidNumberOfCars
+		case invalidNumberOfGames
+		case invalidRacerList
 		case notReadyForRacing
 	}
-	
-	func getNumberOfCars() -> Int {
-		print("자동차 대수는 몇 대 인가요?")
-		return Int(readLine() ?? "") ?? 0
-	}
-	
+			
 	@discardableResult
-	mutating func setup(with numberOfCars: Int) throws -> Bool {
-		guard numberOfCars > 0 else {
-			throw RacingError.invalidNumberOfCars
+	mutating func setup(numberOfGames: Int, racerList: [String]) throws -> Bool {
+		guard numberOfGames > 0 else {
+			throw RacingError.invalidNumberOfGames
 		}
-		self.numberOfCars = numberOfCars
+		guard racerList.count > 0 else {
+			throw RacingError.invalidRacerList
+		}
+		self.numberOfGames = numberOfGames
+		self.cars = racerList.map { Car(racerName: $0) }
 		return true
 	}
 	
 	@discardableResult
 	mutating func run() throws -> Bool {
-		guard numberOfCars != 0 else {
+		guard numberOfGames > 0, cars.count > 0 else {
 			throw RacingError.notReadyForRacing
 		}
 		result += "\n"
-		for _ in 0..<3 {
+		for _ in 0..<numberOfGames {
 			playGame()
 		}
 		return true
 	}
 	
 	private mutating func playGame() {
-		for _ in 0..<numberOfCars {
-			result += Car().makeResult()
-			result += "\n"
+		for (_, car) in cars.enumerated() {
+			car.move()
+			result += car.currentState()
 		}
 		result += "\n"
+	}
+	
+	var winnerMessage: String {
+		return "\(topRacerList.joined(separator: ", "))가 최종 우승했습니다."
+	}
+	
+	var topRecord: Int {
+		guard let position = cars.sorted().last?.position else {
+			return 0
+		}
+		return position
+	}
+	
+	var topRacerList: [String] {
+		return cars
+			.filter { $0.position == topRecord }
+			.map { $0.racerName }
 	}
 }

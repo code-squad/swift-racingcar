@@ -14,6 +14,7 @@
 		6FE3A1AF2331067E00F40ABF /* Printable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE3A1AA232FDC8000F40ABF /* Printable.swift */; };
 		6FE3A1B02331067E00F40ABF /* RacingGame+Printable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE3A1AC232FDC9500F40ABF /* RacingGame+Printable.swift */; };
 		6FE3A1B423310DE100F40ABF /* CarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE3A1B323310DE100F40ABF /* CarTests.swift */; };
+		6FE3A1B623311FED00F40ABF /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE3A1B523311FED00F40ABF /* InputView.swift */; };
 		8332F7602073755D00B11845 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8332F75F2073755D00B11845 /* main.swift */; };
 		CC864C57231FB86400E1C4DC /* RacingGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC864C56231FB86400E1C4DC /* RacingGameTests.swift */; };
 		CC864C5C231FB90B00E1C4DC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8332F75F2073755D00B11845 /* main.swift */; };
@@ -40,6 +41,7 @@
 		6FE3A1AA232FDC8000F40ABF /* Printable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printable.swift; sourceTree = "<group>"; };
 		6FE3A1AC232FDC9500F40ABF /* RacingGame+Printable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RacingGame+Printable.swift"; sourceTree = "<group>"; };
 		6FE3A1B323310DE100F40ABF /* CarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTests.swift; sourceTree = "<group>"; };
+		6FE3A1B523311FED00F40ABF /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		8332F75C2073755D00B11845 /* RacingCar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RacingCar; sourceTree = BUILT_PRODUCTS_DIR; };
 		8332F75F2073755D00B11845 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		CC864C54231FB86400E1C4DC /* RacingCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacingCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 				6FE3A1A8232FDC6B00F40ABF /* Printer.swift */,
 				6FE3A1AA232FDC8000F40ABF /* Printable.swift */,
 				6FE3A1AC232FDC9500F40ABF /* RacingGame+Printable.swift */,
+				6FE3A1B523311FED00F40ABF /* InputView.swift */,
 			);
 			path = RacingCar;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FE3A1A9232FDC6B00F40ABF /* Printer.swift in Sources */,
+				6FE3A1B623311FED00F40ABF /* InputView.swift in Sources */,
 				CC864C60231FBF3B00E1C4DC /* RacingGame.swift in Sources */,
 				CC864C5E231FBF2800E1C4DC /* Car.swift in Sources */,
 				8332F7602073755D00B11845 /* main.swift in Sources */,

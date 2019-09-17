@@ -11,5 +11,6 @@ import Foundation
 extension RacingGame: Printable {
 	func display() {
 		print(result)
+		print(winnerMessage)
 	}
 }

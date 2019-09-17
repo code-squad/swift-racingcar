@@ -12,8 +12,12 @@ func main() {
 	do {
 		var game = RacingGame()
 		let printer = Printer()
-		let numberOfCars = game.getNumberOfCars()
-		try game.setup(with: numberOfCars)
+		let racerList = InputView.getRacerList()
+		let numberOfGames = InputView.getNumberOfGames()
+		try game.setup(
+			numberOfGames: numberOfGames,
+			racerList: racerList
+		)
 		try game.run()
 		printer.display(printable: game)
 	} catch let error {

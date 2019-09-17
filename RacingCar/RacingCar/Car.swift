@@ -8,15 +8,33 @@
 
 import Foundation
 
-struct Car {
-	func makeResult() -> String {
-		var result = ""
-		for _ in 0..<3 {
-			let random = Int.random(in: 0...9)
-			if random >= 4 {
-				result += "-"
-			}
+class Car: Comparable {
+	static func < (lhs: Car, rhs: Car) -> Bool {
+		return lhs.position < rhs.position
+	}
+	
+	static func == (lhs: Car, rhs: Car) -> Bool {
+		return lhs.racerName == rhs.racerName
+	}
+	
+	let racerName: String
+	var position = 0
+	
+	init(racerName: String) {
+		self.racerName = racerName
+	}
+	
+	func move() {
+		let random = Int.random(in: 0...9)
+		if random >= 4 {
+			position += 1
 		}
-		return result
+	}
+	
+	func currentState() -> String {
+		let state = Array(0..<position)
+			.map { _ in "-" }
+			.joined()
+		return "\(racerName) : \(state) \n"
 	}
 }
