@@ -9,6 +9,7 @@
 import Foundation
 
 struct RacingCar {
+    let minValidSpeed: UInt32 = 4
     private(set) var distance: UInt
     private(set) var name: String
     
@@ -18,7 +19,7 @@ struct RacingCar {
     }
     
     func distance(for speed: UInt32) -> UInt {
-        return (speed > RacingGameConstants.minValidSpeed) ? 1 : 0
+        return (speed > minValidSpeed) ? 1 : 0
     }
     
     mutating func race() {
