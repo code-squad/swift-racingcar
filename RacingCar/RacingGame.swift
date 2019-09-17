@@ -10,15 +10,15 @@ import Foundation
 
 struct RacingGame {
     private let cars: [Car]
-    private let count: Int
+    private let iterations: Int
     
-    init(cars: [Car], count: Int) {
+    init(cars: [Car], iterations: Int) {
         self.cars = cars
-        self.count = count
+        self.iterations = iterations
     }
     
     func run() {
-        for _ in 0 ..< count {
+        for _ in 0 ..< iterations {
             for index in 0 ..< cars.count {
                 let isForward = (Int.random(in: 0...9) >= 4) ? true : false
                 cars[index].position = (isForward ? 1 : 0)
