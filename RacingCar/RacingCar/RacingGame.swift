@@ -14,8 +14,8 @@ struct RacingGame: Printable {
 		case invalidRacerList
 		case notReadyForRacing
 	}
-	
-	private(set) var record = ""
+    
+    var records = [StateRepresentable]()
 	var winnerMessage: String {
 		return "\(topRacerList.joined(separator: ", "))가 최종 우승했습니다."
 	}
@@ -41,37 +41,40 @@ struct RacingGame: Printable {
 		return topCarList
 			.map { $0.racerName }
 	}
-			
-	@discardableResult
-	mutating func setup(numberOfGames: Int, racerList: [String]) throws -> Bool {
-		guard numberOfGames > 0 else {
-			throw RacingError.invalidNumberOfGames
-		}
-		guard racerList.count > 0 else {
-			throw RacingError.invalidRacerList
-		}
-		self.numberOfGames = numberOfGames
-		self.cars = racerList.map { Car(racerName: $0) }
-		return true
-	}
-	
+    
+    init(numberOfGames: Int, racerList: [String]) throws {
+        guard numberOfGames > 0 else {
+            throw RacingError.invalidNumberOfGames
+        }
+        guard racerList.count > 0 else {
+            throw RacingError.invalidRacerList
+        }
+        self.numberOfGames = numberOfGames
+        self.cars = racerList.map { Car(racerName: $0) }
+    }
+    
 	@discardableResult
 	mutating func run() throws -> Bool {
 		guard numberOfGames > 0, cars.count > 0 else {
 			throw RacingError.notReadyForRacing
 		}
-		record += "\n"
-		for _ in 0..<numberOfGames {
-			playGame()
-		}
+        records = Array(0..<numberOfGames)
+            .flatMap { _ in playGame() }
 		return true
 	}
-	
-	private mutating func playGame() {
-		for (_, car) in cars.enumerated() {
-			car.move(luck: Int.random(in: 0...9))
-			record += car.currentState()
-		}
-		record += "\n"
-	}
+    
+    func playGame() -> [StateRepresentable] {
+        let divider = CarState(racerName: "", positionState: "")
+        var result = [StateRepresentable]()
+        for car in cars {
+            car.move(luck: makeLuckNumber())
+            result.append(car.state)
+        }
+        result.append(divider)
+        return result
+    }
+    
+    private func makeLuckNumber() -> Int {
+        return Int.random(in: 0...9)
+    }
 }

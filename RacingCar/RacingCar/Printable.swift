@@ -9,7 +9,8 @@
 import Foundation
 
 protocol Printable {
-	var record: String { get }
+//    var record: String { get }
+    var records: [StateRepresentable] { get }
 	var winnerMessage: String { get }
 }
 

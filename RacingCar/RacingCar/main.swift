@@ -10,14 +10,13 @@ import Foundation
 
 func main() {
 	do {
-		var game = RacingGame()
 		let outputView = OutputView()
 		let racerList = InputView.getRacerList()
 		let numberOfGames = InputView.getNumberOfGames()
-		try game.setup(
-			numberOfGames: numberOfGames,
-			racerList: racerList
-		)
+        var game = try RacingGame(
+            numberOfGames: numberOfGames,
+            racerList: racerList
+        )
 		try game.run()
 		outputView.display(game)
 	} catch let error {

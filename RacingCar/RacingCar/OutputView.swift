@@ -10,7 +10,13 @@ import Foundation
 
 struct OutputView {
 	func display(_ printable: Printable) {
-		print(printable.record)
+        for record in printable.records {
+            guard record.racerName.count > 0 else {
+                print("")
+                continue
+            }
+            print("\(record.racerName) : \(record.positionState)")
+        }
 		print(printable.winnerMessage)
 	}
 }
