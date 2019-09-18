@@ -21,4 +21,15 @@ struct RaceGame {
     func run(_ transform: (Car)->()) {
         cars.forEach{ transform($0) }
     }
+    
+    //MARK: - subscript
+    
+    subscript(index: Int) -> Car {
+        get {
+            return cars[index]
+        }
+        set (newCar) {
+            cars[index] = newCar
+        }
+    }
 }
