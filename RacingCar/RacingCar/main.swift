@@ -16,12 +16,12 @@ func carCountRead() {
     print("자동차 대수는 몇 대 인가요?")
     let carReadValue = readLine()
     carTotalCount = Int( carReadValue ?? "0") ?? 0
-    gameTicketAry = [Int](repeating: 1, count: carTotalCount)  //첫게임 티켓 발급(초기화)
 }
 
 func run() {
     print("** Game start **")
-    
+    gameTicketAry = [Int](repeating: 1, count: carTotalCount)  //게임 준비(첫게임 티켓 발급)
+
     for gameIndex in 1...gameTotalCount {  //게임 횟수 만큼 반복
         for carIndex in 0..<carTotalCount{ //자동차 수 만큼 반복
             
@@ -37,7 +37,6 @@ func run() {
     }
     print("** Game end **")
 }
-
 
 func continueAsk() -> Bool{
     print("게임을 계속 하시겠습니까?(y/n)")
