@@ -1,48 +1,52 @@
 import Foundation
 
-struct RaceGame {
+print("자동차 대수는 몇 대인가요?")
+let readValue = readLine()
+let carsCount = Int(readValue ?? "0") ?? 0
 
-    var cars: Int
-    var status: [Int] = []
+struct Car {
+    var distance = Int()
     
-    init(cars: Int) {
-        self.cars = cars
-        self.status = [Int](repeating: 0, count: cars)
+    init() {
+        distance = 0
     }
-
-    mutating func oneStepForward() {
-        for _ in 0..<cars {
-            let random = arc4random_uniform(10)
-            if random > 3 {
-                cars[index] += 1
-            }
+    
+    mutating func oneStepForward(){
+        let randomValue = arc4random_uniform(10)
+        if (randomValue >= 4) {
+            distance += 1
         }
     }
     
     mutating func showCarisRacing(){
-        for index in 0..<cars{
-            for _ in 0..<status[index]{
-                print("-", terminator:"")
+        for _ in 0...distance{
+            print("-", terminator:"")
+        }
+        print("")
+    }
+}
+
+struct RacingGame {
+    var cars: Array<Int> = []
+    
+    mutating func initRacing(carsCount: Int){
+        for _ in 1...carsCount{
+            cars.append(0)
+        }
+    }
+    
+    mutating func playing(){
+        for _ in 1...3{
+            for index in 0..<cars.count{
+                var currentCar = cars[index]
+                print("** Game Start **")
+                currentCar.oneStepForward()
+                currentCar.showCarisRacing()
             }
             print("")
         }
     }
-    
-    mutating func playing() {
-        for _ in 1...3 {
-            oneStepForward()
-            showCarisRacing()
-            print("")
-        }
-    }
 }
 
-func CountCar(){
-    print("자동차 대수")
-    let valuereads = readLine()
-    let cars = Int(valuereads ?? "0") ?? 0
-}
-
-CountCar()
-var racingGame = RacingGame()
-racingGame.racing()
+var game = RacingGame()
+game.play()
